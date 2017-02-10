@@ -89,7 +89,10 @@ header .hamburger-menu.open .menu-bar:last-child {
 }
 .yeti-mobile-menu {
   height: calc(100vh - 5rem);
-  overflow-y: hidden;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 .yeti-mobile-menu .mobile-menu-left {
   float: left;
@@ -105,46 +108,121 @@ header .hamburger-menu.open .menu-bar:last-child {
 }
 .yeti-mobile-menu .mobile-menu-left .bike-types .bike-type {
   width: 100%;
-  height: calc((100vh / 3) - 1.333rem);
+  height: calc((100vh / 3) - 2.9rem);
   cursor: pointer;
   border-bottom-color: darkgrey;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  transition: all 0.4s cubic-bezier(0.17, 0.67, 0.73, 1);
 }
 .yeti-mobile-menu .mobile-menu-left .bike-types .bike-type:first-child {
   background: url("../img/2017-asr.jpg") no-repeat;
   background-position: center;
   background-size: contain;
 }
-.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type div {
+.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type:nth-child(2) {
+  background: url("../img/2017-asr.jpg") no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type:last-child {
+  background: url("../img/2017-asr.jpg") no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type:last-child .bike-name-overlay {
+  top: 78%;
+}
+.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type:last-child .bike-name {
+  top: 67%;
+}
+.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type .bike-name-overlay {
   position: relative;
-  top: 80%;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bolder;
+  top: 87.3%;
+  width: 100%;
+  height: 40px;
+  right: -100%;
+  background-color: #009aa8;
   opacity: 1;
-  z-index: 2;
   transition: all 0.4s ease-in-out;
 }
-.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type:hover div {
-  opacity: 0;
+.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type .bike-name {
+  position: relative;
+  top: 77%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type:hover {
+  transform: scale(1.2);
+}
+.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type:hover .bike-name-overlay {
+  right: 0;
+}
+.yeti-mobile-menu .mobile-menu-left .bike-types .bike-type:hover .bike-name {
+  width: 100%;
+  color: #fff;
+  opacity: 1;
 }
 .yeti-mobile-menu .mobile-menu-right {
   float: left;
   width: 50%;
   max-width: 384px;
   opacity: 0;
+  height: 90.9vh;
   margin-top: 100%;
   background-color: #fff;
   border-left-color: darkgrey;
   border-left-style: solid;
   border-left-width: 1px;
+  box-shadow: 17px 0px 16px -5px #575457;
   transition: all 0.4s ease-in-out;
 }
+.yeti-mobile-menu .mobile-menu-right .main-nav-links-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 1px 0 0 0;
+}
+.yeti-mobile-menu .mobile-menu-right .main-nav-links-container ul li {
+  width: 100%;
+  height: 3rem;
+  padding: 2rem 2rem 4rem 2rem;
+  background-color: #fff;
+  border-bottom-color: #fff;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  font-size: 2rem;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.yeti-mobile-menu .mobile-menu-right .main-nav-links-container ul li:hover {
+  background-color: #009aa8;
+  color: #fff;
+}
+.yeti-mobile-menu .find-a-retailer {
+  clear: both;
+  width: 100%;
+  height: 4rem;
+  margin-left: 100%;
+  padding-top: 1rem;
+  background-color: #009aa8;
+  border-top-color: #fff;
+  border-top-style: solid;
+  border-top-width: 1px;
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.3s;
+}
+.yeti-mobile-menu.open {
+  opacity: 1;
+}
 .yeti-mobile-menu.open .mobile-menu-left {
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 9rem);
 }
 .yeti-mobile-menu.open .mobile-menu-right {
-  margin-top: 5rem;
+  margin-top: 0;
   opacity: 1;
+}
+.yeti-mobile-menu.open .find-a-retailer {
+  margin-left: 0;
 }
