@@ -1,10 +1,12 @@
 @import 'utils/utils.less'; 
 
 .yeti-mobile-menu {
+    position: relative;
     height: calc(~"100vh - 5rem");
     overflow: hidden;
-	background-color: rgba(0,0,0,0.6);	
+	background-color: rgba(0,0,0,0.6);
     opacity: 0;
+    z-index: 2;
 	transition: opacity 1s ease-in-out;
 	
     .mobile-menu-left {
@@ -21,12 +23,13 @@
 		
 		.bike-types {            
 			.bike-type {
+                position: relative;
 				width: 100%;
-				height: calc(~"(100vh / 3) - 2.9rem");
+				height: calc(~"(100vh / 3 - 3rem)");
 				cursor: pointer;				
 				border-bottom-color: darkgrey;
 				border-bottom-style: solid;
-				border-bottom-width: 1px;	
+				border-bottom-width: 1px;
 				transition: all .4s cubic-bezier(.17,.67,.73,1);
 				
                 &:first-child {
@@ -45,21 +48,13 @@
                     background: url("../img/2017-asr.jpg") no-repeat;
                     background-position: center;
                     background-size: contain;
-					
-					.bike-name-overlay {
-						top: 78%;	
-					}
-
-					.bike-name {
-						top: 67%;
-					}
                 }
                 
                 .bike-name-overlay {
-					position: relative;
-					top: 87.3%;
+					position: absolute;
+					bottom: 0;
 					width: 100%;
-					height: 40px;
+					height: 4rem;
 					right: -100%;
 					background-color: #009aa8;
 					opacity: 1;
@@ -67,15 +62,16 @@
 				}
 				
 				.bike-name {
-					position: relative;
-					top: 77%;
+					position: absolute;
+					width: 100%;
+                    bottom: 10px;
 					text-align: center;
 					font-size: 2rem;
 					font-weight: bolder;					
 				}
 				
 				&:hover{
-					transform: scale(1.2);
+					transform: scale(0.9);
 					
 					.bike-name-overlay {
 						right: 0;
@@ -100,7 +96,7 @@
         width: 50%;
         max-width: 384px;
         opacity: 0;
-		height: 90.9vh;
+		height: calc(~"100vh - 9rem");
         margin-top: 100%;        
         background-color: #fff;
 		border-left-color: darkgrey;
@@ -134,12 +130,29 @@
 				}
 			}
 		}
+        
+        .social-link-bar {
+            position: absolute;
+            bottom: 7rem;
+            margin-left: 2rem;
+            
+            div {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+            
+            span {
+                font-size: 2rem;
+                padding: 10px;
+            }
+        }
     }
 	
 	.find-a-retailer {
-		clear: both;
+		position: absolute;
 		width: 100%;
 		height: 4rem;
+        bottom: 0;
 		margin-left: 100%;
 		padding-top: 1rem;
 		background-color: #009aa8;
@@ -148,6 +161,7 @@
 		border-top-width: 1px;
 		color: #fff;
 		text-align: center;
+        font-size: 1.6rem;
 		transition: all .3s ease-in-out .3s;
 	}
 }
