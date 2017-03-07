@@ -35,17 +35,18 @@ body {
   background-size: cover;
   background-size: contain;
   width: 100%;
-  height: 0;
+  height: 100%;
   padding-top: 66.66%;
 }
 .whistler-banner .text-container {
   position: relative;
   bottom: 11rem;
-  float: right;
-  width: 18rem;
+  right: 30px;
+  width: 100%;
   margin-right: 2rem;
   text-align: right;
   color: #fff;
+  font-size: 3rem;
 }
 
 .total-rewards-triangle-base {
@@ -140,16 +141,14 @@ header .hamburger-menu.open .menu-bar:last-child {
 }
 .main-hero-banner .text-container {
   position: relative;
-  top: 30vh;
+  top: 40vh;
   color: #fff;
   margin: 2rem;
   max-width: 50%;
 }
 @media screen and (min-width: 480px) {
   .main-hero-banner .text-container {
-    top: 60vh;
     margin: 0 0 1rem 3rem;
-    max-width: 40%;
   }
 }
 .main-hero-banner .text-container h1 {
@@ -368,4 +367,59 @@ header .hamburger-menu.open .menu-bar:last-child {
 }
 .yeti-mobile-menu.open .find-a-retailer {
   margin-left: 0;
+}
+
+.total-rewards-triangle-base {
+  display: none;
+  position: relative;
+  bottom: -73px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.product-tile-container {
+  position: relative;
+  margin-top: -85px;
+}
+.product-tile-container .tile {
+  width: 100%;
+  height: 250px;
+  float: left;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .product-tile-container .tile {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .product-tile-container .tile {
+    width: 33.33333%;
+  }
+}
+.product-tile-container .tile:first-child {
+  background-color: blue;
+}
+.product-tile-container .tile:nth-child(2) {
+  background-color: blueviolet;
+}
+.product-tile-container .tile:last-child {
+  background-color: aqua;
+}
+.product-tile-container .tile .overlay {
+  position: relative;
+  background-color: rgba(5, 5, 5, 0.9);
+  height: 100%;
+  overflow: hidden;
+  top: 80%;
+  z-index: 3;
+}
+.product-tile-container .tile .overlay .header {
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem 0 1rem 1rem;
+}
+.product-tile-container .tile .overlay .body {
+  color: #fff;
+  margin: 1rem 1rem 1rem 1rem;
 }
